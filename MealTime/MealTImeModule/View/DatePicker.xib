@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DatePickerView" customModule="MealTime" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="359"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgN-IS-156">
+                    <rect key="frame" x="325" y="33" width="69" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Выбрать"/>
+                    <connections>
+                        <action selector="chooseButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="mFM-aI-4rI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFh-4z-Xi4">
+                    <rect key="frame" x="20" y="33" width="62" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Отмена"/>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Du1-2m-7Jt"/>
+                    </connections>
+                </button>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uAT-3F-0cT" customClass="Date">
+                    <rect key="frame" x="0.0" y="117" width="414" height="162"/>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dFh-4z-Xi4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="MZW-47-UTe"/>
+                <constraint firstItem="uAT-3F-0cT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="g45-lp-2fP"/>
+                <constraint firstItem="dFh-4z-Xi4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="lYL-gY-H36"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CgN-IS-156" secondAttribute="trailing" constant="20" id="tHL-Aj-ipT"/>
+                <constraint firstItem="uAT-3F-0cT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xW5-gY-wbX"/>
+                <constraint firstItem="CgN-IS-156" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="ybh-or-61i"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uAT-3F-0cT" secondAttribute="bottom" constant="80" id="zqy-zU-5zT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="datePicker" destination="uAT-3F-0cT" id="HdO-Y2-aHw"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-19.754464285714285"/>
+        </view>
+    </objects>
+</document>
