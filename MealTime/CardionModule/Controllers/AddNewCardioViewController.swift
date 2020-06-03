@@ -32,9 +32,7 @@ class AddNewCardioViewController: UITableViewController {
         super.viewDidLoad()
         
         calendarButton.isHidden = true
-        
-        upperPressureTextField.addTarget(self, action: #selector(dateNotChoose), for: .editingChanged)
-        
+                
         setupDateFormatter(dateFormatter: dateFormatter, date: Date())
         dateTextField.text = myDate
         
@@ -119,13 +117,3 @@ class AddNewCardioViewController: UITableViewController {
     
 }
 
-
-extension AddNewCardioViewController: UITextFieldDelegate {
-    
-    // Если на datePicker забыли нажать "Выбрать", устанавливается сегодняшняя дата
-    @objc private func dateNotChoose() {
-        if upperPressureTextField.becomeFirstResponder() {
-            setupDateFormatter(dateFormatter: dateFormatter, date: Date())
-        }
-    }
-}

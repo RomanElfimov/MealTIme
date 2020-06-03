@@ -7,4 +7,5 @@ target 'MealTime' do
 
   # Pods for MealTime
   pod 'RealmSwift'
+  pod 'Charts'
 end

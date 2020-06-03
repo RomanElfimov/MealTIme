@@ -374,6 +374,70 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
+        <!--Line Charts View Controller-->
+        <scene sceneID="Pb8-Jv-GgW">
+            <objects>
+                <viewController id="0ox-oC-PML" customClass="LineChartsViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a3z-ft-GBA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CO-LK-ySz" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="233" width="414" height="580"/>
+                                <color key="backgroundColor" red="0.75096064228841941" green="1" blue="0.67624944310708024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3M-4O-T7I" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="233" width="414" height="580"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-2211180_1920" translatesAutoresizingMaskIntoConstraints="NO" id="fyu-e6-Hqi">
+                                <rect key="frame" x="0.0" y="88" width="414" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="U1B-8h-M1m"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UOW-HO-nuo">
+                                <rect key="frame" x="0.0" y="202" width="414" height="32"/>
+                                <segments>
+                                    <segment title="Давление"/>
+                                    <segment title="Пульс"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedContollTapped:" destination="0ox-oC-PML" eventType="valueChanged" id="Cfx-di-hto"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fyu-e6-Hqi" firstAttribute="top" secondItem="LBN-yB-jT2" secondAttribute="top" id="3MJ-Qv-yPI"/>
+                            <constraint firstItem="fyu-e6-Hqi" firstAttribute="trailing" secondItem="LBN-yB-jT2" secondAttribute="trailing" id="A0o-DC-ybx"/>
+                            <constraint firstItem="g3M-4O-T7I" firstAttribute="bottom" secondItem="LBN-yB-jT2" secondAttribute="bottom" id="JkW-Vq-1aI"/>
+                            <constraint firstItem="UOW-HO-nuo" firstAttribute="trailing" secondItem="LBN-yB-jT2" secondAttribute="trailing" id="L26-yn-vPm"/>
+                            <constraint firstItem="1CO-LK-ySz" firstAttribute="leading" secondItem="LBN-yB-jT2" secondAttribute="leading" id="W7l-1M-GNA"/>
+                            <constraint firstItem="fyu-e6-Hqi" firstAttribute="leading" secondItem="LBN-yB-jT2" secondAttribute="leading" id="Wfb-en-PLx"/>
+                            <constraint firstItem="g3M-4O-T7I" firstAttribute="top" secondItem="UOW-HO-nuo" secondAttribute="bottom" id="XaL-vp-hj3"/>
+                            <constraint firstItem="g3M-4O-T7I" firstAttribute="trailing" secondItem="LBN-yB-jT2" secondAttribute="trailing" id="bgU-7a-pXV"/>
+                            <constraint firstItem="UOW-HO-nuo" firstAttribute="top" secondItem="fyu-e6-Hqi" secondAttribute="bottom" id="dDg-HO-7xF"/>
+                            <constraint firstItem="LBN-yB-jT2" firstAttribute="bottom" secondItem="1CO-LK-ySz" secondAttribute="bottom" id="iIX-8w-e74"/>
+                            <constraint firstItem="g3M-4O-T7I" firstAttribute="leading" secondItem="LBN-yB-jT2" secondAttribute="leading" id="k4i-Vy-klw"/>
+                            <constraint firstItem="1CO-LK-ySz" firstAttribute="top" secondItem="UOW-HO-nuo" secondAttribute="bottom" id="k4p-Kz-bas"/>
+                            <constraint firstItem="UOW-HO-nuo" firstAttribute="leading" secondItem="LBN-yB-jT2" secondAttribute="leading" id="nX3-E0-fcG"/>
+                            <constraint firstItem="UOW-HO-nuo" firstAttribute="top" secondItem="fyu-e6-Hqi" secondAttribute="bottom" id="qwP-yc-v1P"/>
+                            <constraint firstItem="1CO-LK-ySz" firstAttribute="trailing" secondItem="LBN-yB-jT2" secondAttribute="trailing" id="y4X-3P-xK7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LBN-yB-jT2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="E0U-Ya-32R"/>
+                    <connections>
+                        <outlet property="heartRateChartView" destination="g3M-4O-T7I" id="Yce-oD-mbd"/>
+                        <outlet property="pressureChartView" destination="1CO-LK-ySz" id="LGe-mb-tbL"/>
+                        <outlet property="segmentedControl" destination="UOW-HO-nuo" id="6fF-fZ-lc3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3SU-81-1Zv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824.6376811594205" y="851.78571428571422"/>
+        </scene>
         <!--Кардио-->
         <scene sceneID="wyP-SN-5Va">
             <objects>
@@ -469,6 +533,11 @@
                         <viewLayoutGuide key="safeArea" id="SVr-v1-sUU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Кардио" id="aDe-dq-L1p">
+                        <barButtonItem key="leftBarButtonItem" image="statistics" id="Od9-6F-uhm">
+                            <connections>
+                                <segue destination="0ox-oC-PML" kind="show" id="OAq-Ju-ksg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PZx-40-oZA">
                             <connections>
                                 <segue destination="s3y-1Y-5d7" kind="show" identifier="addCardio" id="0g1-c3-8Qa"/>
@@ -481,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khf-eM-Woh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="845.08928571428567"/>
+            <point key="canvasLocation" x="1048" y="1545"/>
         </scene>
         <!--Add New Cardio View Controller-->
         <scene sceneID="8tl-s8-Stp">
@@ -647,7 +716,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lX6-gR-bpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Gd6-9K-cGj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1896" y="845"/>
+            <point key="canvasLocation" x="1825" y="1545"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eXl-JC-Taf">
@@ -684,7 +753,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9q-aM-Gum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-957" y="477"/>
+            <point key="canvasLocation" x="-1151" y="959"/>
         </scene>
         <!--Кардио-->
         <scene sceneID="Ril-Ls-tc5">
@@ -703,7 +772,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dY-j1-N4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="844.41964285714278"/>
+            <point key="canvasLocation" x="138" y="1545"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -715,5 +784,7 @@
         <image name="eat" width="33.5" height="33.5"/>
         <image name="healthFoods" width="7329" height="3586"/>
         <image name="heart" width="33.5" height="33.5"/>
+        <image name="heart-2211180_1920" width="1920" height="1080"/>
+        <image name="statistics" width="33.5" height="33.5"/>
     </resources>
 </document>

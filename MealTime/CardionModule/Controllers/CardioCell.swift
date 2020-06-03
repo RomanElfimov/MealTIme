@@ -22,7 +22,10 @@ class CardioCell: UITableViewCell {
         dateLabel.text = cardio.date
         
         // Устанавливаем цвет ярлыка пульса
-        guard let heartRateInt = Int(cardio.heartRate) else { return }
+        guard let heartRateInt = Int(cardio.heartRate) else {
+            cardio.heartRate = "0"
+            return
+        }
         
         if heartRateInt < 60 {
             heartRateLabel.textColor = .lightGray
@@ -42,7 +45,10 @@ class CardioCell: UITableViewCell {
         
         
         // Устанавливаем цвет ярлыка давления
-        guard let upperPressureInt = Int(cardio.upperPressure) else { return }
+        guard let upperPressureInt = Int(cardio.upperPressure) else {
+            cardio.upperPressure = "0"
+            return
+        }
         
         if upperPressureInt < 100 {
             pressureLabel.textColor = .lightGray

@@ -22,6 +22,7 @@ class CardioViewController: UIViewController {
         super.viewDidLoad()
         
         cardioArray = cardioRealm.objects(CardioModel.self)
+        cardioArray = cardioArray.sorted(byKeyPath: "date", ascending: false)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,11 +57,13 @@ class CardioViewController: UIViewController {
                 newCardioVC.currentCardio.upperPressure = newCardio.upperPressure
                 newCardioVC.currentCardio.lowerPressure = newCardio.lowerPressure
                 newCardioVC.currentCardio.heartRate = newCardio.heartRate
+                cardioArray = cardioArray.sorted(byKeyPath: "date", ascending: false)
             }
         } else {
             CardioStorageManager.saveObject(newCardio)
+            cardioArray = cardioArray.sorted(byKeyPath: "date", ascending: false)
         }
-        
+        cardioArray = cardioArray.sorted(byKeyPath: "date", ascending: false)
         tableView.reloadData()
     }
 }
