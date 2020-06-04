@@ -28,6 +28,7 @@
 		E94F1B962477ACAF00E11C40 /* DinnerStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B862477ACAF00E11C40 /* DinnerStorageManager.swift */; };
 		E94F1B972477ACAF00E11C40 /* BreakfastStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B872477ACAF00E11C40 /* BreakfastStorageManager.swift */; };
 		E94F1B982477ACAF00E11C40 /* LunchStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B882477ACAF00E11C40 /* LunchStorageManager.swift */; };
+		E950F52C2487F501007A53B7 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950F52B2487F501007A53B7 /* WaterViewController.swift */; };
 		E969A15D2486AE65006978C2 /* LineChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969A15C2486AE65006978C2 /* LineChartsViewController.swift */; };
 		E99A7C22247EC9A5003ADE3D /* CardioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A7C21247EC9A5003ADE3D /* CardioViewController.swift */; };
 		E99A7C24247ECE68003ADE3D /* AddNewCardioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A7C23247ECE67003ADE3D /* AddNewCardioViewController.swift */; };
@@ -64,6 +65,7 @@
 		E94F1B862477ACAF00E11C40 /* DinnerStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DinnerStorageManager.swift; sourceTree = "<group>"; };
 		E94F1B872477ACAF00E11C40 /* BreakfastStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastStorageManager.swift; sourceTree = "<group>"; };
 		E94F1B882477ACAF00E11C40 /* LunchStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchStorageManager.swift; sourceTree = "<group>"; };
+		E950F52B2487F501007A53B7 /* WaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
 		E969A15C2486AE65006978C2 /* LineChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartsViewController.swift; sourceTree = "<group>"; };
 		E99A7C21247EC9A5003ADE3D /* CardioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioViewController.swift; sourceTree = "<group>"; };
 		E99A7C23247ECE67003ADE3D /* AddNewCardioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardioViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				E91AD7F4246E695900BC2E60 /* SceneDelegate.swift */,
 				E94F1B732477ACAF00E11C40 /* MealTImeModule */,
 				E99A7C20247EC98C003ADE3D /* CardionModule */,
+				E950F52D2487F509007A53B7 /* WaterModule */,
 				E91AD7F8246E695900BC2E60 /* Main.storyboard */,
 				E91AD7FB246E695A00BC2E60 /* Assets.xcassets */,
 				E91AD7FD246E695A00BC2E60 /* LaunchScreen.storyboard */,
@@ -194,6 +197,14 @@
 				E94F1B882477ACAF00E11C40 /* LunchStorageManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E950F52D2487F509007A53B7 /* WaterModule */ = {
+			isa = PBXGroup;
+			children = (
+				E950F52B2487F501007A53B7 /* WaterViewController.swift */,
+			);
+			path = WaterModule;
 			sourceTree = "<group>";
 		};
 		E99A7C20247EC98C003ADE3D /* CardionModule */ = {
@@ -372,6 +383,7 @@
 				E99A7C22247EC9A5003ADE3D /* CardioViewController.swift in Sources */,
 				E94F1B8D2477ACAF00E11C40 /* DishesTableViewCell.swift in Sources */,
 				E969A15D2486AE65006978C2 /* LineChartsViewController.swift in Sources */,
+				E950F52C2487F501007A53B7 /* WaterViewController.swift in Sources */,
 				E94F1B962477ACAF00E11C40 /* DinnerStorageManager.swift in Sources */,
 				E94F1B972477ACAF00E11C40 /* BreakfastStorageManager.swift in Sources */,
 				E94F1B982477ACAF00E11C40 /* LunchStorageManager.swift in Sources */,
@@ -525,6 +537,7 @@
 			baseConfigurationReference = 039A3534A8DBACCB773CA8D8 /* Pods-MealTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S59HYY3L5C;
 				INFOPLIST_FILE = MealTime/Info.plist;
@@ -534,6 +547,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.REDev.MealTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -544,6 +558,7 @@
 			baseConfigurationReference = B7735FB161C9B233898C0067 /* Pods-MealTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S59HYY3L5C;
 				INFOPLIST_FILE = MealTime/Info.plist;
@@ -553,6 +568,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.REDev.MealTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

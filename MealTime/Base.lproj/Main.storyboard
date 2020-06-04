@@ -749,11 +749,12 @@
                     <connections>
                         <segue destination="8Bw-X6-HK3" kind="relationship" relationship="viewControllers" id="9D6-KV-Ffq"/>
                         <segue destination="azU-dH-bKg" kind="relationship" relationship="viewControllers" id="K7A-3l-VAK"/>
+                        <segue destination="Ubc-V0-RTR" kind="relationship" relationship="viewControllers" id="oKQ-P1-9io"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9q-aM-Gum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1151" y="959"/>
+            <point key="canvasLocation" x="-1504" y="1857"/>
         </scene>
         <!--Кардио-->
         <scene sceneID="Ril-Ls-tc5">
@@ -774,12 +775,100 @@
             </objects>
             <point key="canvasLocation" x="138" y="1545"/>
         </scene>
+        <!--Water View Controller-->
+        <scene sceneID="21Z-cV-cvE">
+            <objects>
+                <viewController id="vqz-aD-fdj" customClass="WaterViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rf3-83-k7t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8uf-wu-W5G">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vkp-B9-TIA">
+                                <rect key="frame" x="0.0" y="154" width="414" height="2"/>
+                                <color key="progressTintColor" red="0.50907699778662141" green="0.76692347702736763" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barHeight">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LY-hg-FF9">
+                                <rect key="frame" x="126" y="145" width="163" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gU-k9-6nD">
+                                <rect key="frame" x="128" y="412" width="159" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="addWaterButtonTapped:" destination="vqz-aD-fdj" eventType="touchUpInside" id="usS-Xo-XHF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xj-X2-EFh">
+                                <rect key="frame" x="20" y="739" width="58" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="minusWaterButtonTapped:" destination="vqz-aD-fdj" eventType="touchUpInside" id="TRA-o9-5yA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3LY-hg-FF9" firstAttribute="leading" secondItem="RiG-UO-Czb" secondAttribute="leading" constant="126" id="3Y7-WE-hD9"/>
+                            <constraint firstItem="3LY-hg-FF9" firstAttribute="top" secondItem="RiG-UO-Czb" secondAttribute="top" constant="57" id="6QK-i8-Vgc"/>
+                            <constraint firstAttribute="trailing" secondItem="vkp-B9-TIA" secondAttribute="trailing" id="7OA-kk-O7x"/>
+                            <constraint firstItem="vkp-B9-TIA" firstAttribute="leading" secondItem="rf3-83-k7t" secondAttribute="leading" id="9t7-pV-ADl"/>
+                            <constraint firstItem="RiG-UO-Czb" firstAttribute="trailing" secondItem="3LY-hg-FF9" secondAttribute="trailing" constant="125" id="L0D-Tt-ESh"/>
+                            <constraint firstItem="vkp-B9-TIA" firstAttribute="top" secondItem="RiG-UO-Czb" secondAttribute="top" constant="66" id="d3B-x9-SOS"/>
+                            <constraint firstItem="8uf-wu-W5G" firstAttribute="top" secondItem="RiG-UO-Czb" secondAttribute="top" id="d3j-Ec-IIc"/>
+                            <constraint firstItem="8uf-wu-W5G" firstAttribute="trailing" secondItem="RiG-UO-Czb" secondAttribute="trailing" id="e8D-ar-82Z"/>
+                            <constraint firstItem="8uf-wu-W5G" firstAttribute="leading" secondItem="RiG-UO-Czb" secondAttribute="leading" id="k9r-hs-Tuf"/>
+                            <constraint firstAttribute="bottom" secondItem="8uf-wu-W5G" secondAttribute="bottom" id="zSS-ou-JSe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RiG-UO-Czb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CLZ-jx-jNM"/>
+                    <connections>
+                        <outlet property="waterLabel" destination="3LY-hg-FF9" id="smH-V6-N07"/>
+                        <outlet property="waterProgress" destination="vkp-B9-TIA" id="bct-Ba-MCG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6z-PI-TqV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="2264.7321428571427"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="1S7-8c-a80">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ubc-V0-RTR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Etb-96-nAR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="coJ-Td-tQT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vqz-aD-fdj" kind="relationship" relationship="rootViewController" id="LIU-NH-PxV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QId-nX-i9s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="2265"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="UbU-sr-5fk"/>
         <segue reference="2xN-a8-KBn"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="WaterBackground" width="375" height="667"/>
         <image name="calendar" width="512" height="512"/>
         <image name="eat" width="33.5" height="33.5"/>
         <image name="healthFoods" width="7329" height="3586"/>
