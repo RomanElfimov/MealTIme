@@ -783,7 +783,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8uf-wu-W5G">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8uf-wu-W5G">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vkp-B9-TIA">
@@ -801,18 +801,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gU-k9-6nD">
-                                <rect key="frame" x="128" y="412" width="159" height="161"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gU-k9-6nD">
+                                <rect key="frame" x="113" y="353" width="189" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="AddWaterButton"/>
                                 <connections>
                                     <action selector="addWaterButtonTapped:" destination="vqz-aD-fdj" eventType="touchUpInside" id="usS-Xo-XHF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xj-X2-EFh">
-                                <rect key="frame" x="20" y="739" width="58" height="38"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xj-X2-EFh">
+                                <rect key="frame" x="33" y="714" width="54" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="MinusWaterGlass"/>
                                 <connections>
                                     <action selector="minusWaterButtonTapped:" destination="vqz-aD-fdj" eventType="touchUpInside" id="TRA-o9-5yA"/>
                                 </connections>
@@ -833,7 +833,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RiG-UO-Czb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CLZ-jx-jNM"/>
+                    <navigationItem key="navigationItem" id="CLZ-jx-jNM">
+                        <barButtonItem key="leftBarButtonItem" image="Settings" id="hbX-Gp-4xX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="52z-jq-aRL" kind="show" id="05X-QH-ns8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="waterLabel" destination="3LY-hg-FF9" id="smH-V6-N07"/>
                         <outlet property="waterProgress" destination="vkp-B9-TIA" id="bct-Ba-MCG"/>
@@ -843,15 +850,105 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="2264.7321428571427"/>
         </scene>
-        <!--Item-->
+        <!--Settings Table View Controller-->
+        <scene sceneID="ixs-U7-rHk">
+            <objects>
+                <tableViewController modalPresentationStyle="fullScreen" id="52z-jq-aRL" customClass="SettingsTableViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="w64-Bh-Z0D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="WPd-M3-3Y5">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" id="AQW-HT-Pcz">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AQW-HT-Pcz" id="M1i-gi-qia">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Euy-Md-ku5">
+                                                    <rect key="frame" x="197" y="9" width="197" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="52z-jq-aRL" id="1ve-4G-Qp7"/>
+                                                        <outlet property="delegate" destination="52z-jq-aRL" id="mnK-8p-G1N"/>
+                                                    </connections>
+                                                </pickerView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Цель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72W-Rk-31V">
+                                                    <rect key="frame" x="20" y="24" width="117" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" id="6Gw-TS-WB3">
+                                        <rect key="frame" x="0.0" y="105" width="414" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Gw-TS-WB3" id="F9m-xc-cmx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T3w-pO-XDr">
+                                                    <rect key="frame" x="197" y="9" width="197" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="52z-jq-aRL" id="qFq-Rk-xg6"/>
+                                                        <outlet property="delegate" destination="52z-jq-aRL" id="dE3-4b-B3G"/>
+                                                    </connections>
+                                                </pickerView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Объем стакана" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN5-AU-hlw">
+                                                    <rect key="frame" x="20" y="24" width="183" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="121" id="CBg-al-aNB">
+                                        <rect key="frame" x="0.0" y="182" width="414" height="121"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CBg-al-aNB" id="whu-Ib-4eB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="52z-jq-aRL" id="k5S-dA-6lZ"/>
+                            <outlet property="delegate" destination="52z-jq-aRL" id="u9d-o9-9ah"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="MYb-tD-Qnz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="lgG-ew-anu"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="allWaterPicker" destination="Euy-Md-ku5" id="c0a-td-ZPi"/>
+                        <outlet property="oneGlassPicker" destination="T3w-pO-XDr" id="5rk-TO-zSc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aN7-BF-pKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2007" y="2265"/>
+        </scene>
+        <!--Вода-->
         <scene sceneID="1S7-8c-a80">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ubc-V0-RTR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Etb-96-nAR"/>
+                    <tabBarItem key="tabBarItem" title="Вода" image="glassIcon" id="Etb-96-nAR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="coJ-Td-tQT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.019607843137254902" green="0.20392156862745098" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -868,9 +965,13 @@
         <segue reference="2xN-a8-KBn"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="AddWaterButton" width="260" height="260"/>
+        <image name="MinusWaterGlass" width="884" height="1024"/>
+        <image name="Settings" width="33.5" height="33.5"/>
         <image name="WaterBackground" width="375" height="667"/>
         <image name="calendar" width="512" height="512"/>
         <image name="eat" width="33.5" height="33.5"/>
+        <image name="glassIcon" width="33.5" height="33.5"/>
         <image name="healthFoods" width="7329" height="3586"/>
         <image name="heart" width="33.5" height="33.5"/>
         <image name="heart-2211180_1920" width="1920" height="1080"/>

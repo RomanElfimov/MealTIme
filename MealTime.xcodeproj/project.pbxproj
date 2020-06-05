@@ -30,6 +30,7 @@
 		E94F1B982477ACAF00E11C40 /* LunchStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B882477ACAF00E11C40 /* LunchStorageManager.swift */; };
 		E950F52C2487F501007A53B7 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950F52B2487F501007A53B7 /* WaterViewController.swift */; };
 		E969A15D2486AE65006978C2 /* LineChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969A15C2486AE65006978C2 /* LineChartsViewController.swift */; };
+		E96BC204248930260073C0C1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96BC203248930260073C0C1 /* SettingsTableViewController.swift */; };
 		E99A7C22247EC9A5003ADE3D /* CardioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A7C21247EC9A5003ADE3D /* CardioViewController.swift */; };
 		E99A7C24247ECE68003ADE3D /* AddNewCardioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A7C23247ECE67003ADE3D /* AddNewCardioViewController.swift */; };
 		E99A7C27247ECFF7003ADE3D /* CardioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A7C26247ECFF7003ADE3D /* CardioModel.swift */; };
@@ -67,6 +68,7 @@
 		E94F1B882477ACAF00E11C40 /* LunchStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchStorageManager.swift; sourceTree = "<group>"; };
 		E950F52B2487F501007A53B7 /* WaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
 		E969A15C2486AE65006978C2 /* LineChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartsViewController.swift; sourceTree = "<group>"; };
+		E96BC203248930260073C0C1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E99A7C21247EC9A5003ADE3D /* CardioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioViewController.swift; sourceTree = "<group>"; };
 		E99A7C23247ECE67003ADE3D /* AddNewCardioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardioViewController.swift; sourceTree = "<group>"; };
 		E99A7C26247ECFF7003ADE3D /* CardioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioModel.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				E950F52B2487F501007A53B7 /* WaterViewController.swift */,
+				E96BC203248930260073C0C1 /* SettingsTableViewController.swift */,
 			);
 			path = WaterModule;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				E94F1B8F2477ACAF00E11C40 /* NewDishViewController.swift in Sources */,
 				E94F1B8B2477ACAF00E11C40 /* DinnerModel.swift in Sources */,
 				E94CE818247ED47400F8AF2D /* CardioCell.swift in Sources */,
+				E96BC204248930260073C0C1 /* SettingsTableViewController.swift in Sources */,
 				E99A7C22247EC9A5003ADE3D /* CardioViewController.swift in Sources */,
 				E94F1B8D2477ACAF00E11C40 /* DishesTableViewCell.swift in Sources */,
 				E969A15D2486AE65006978C2 /* LineChartsViewController.swift in Sources */,
