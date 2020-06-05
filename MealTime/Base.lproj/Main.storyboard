@@ -778,7 +778,7 @@
         <!--Water View Controller-->
         <scene sceneID="21Z-cV-cvE">
             <objects>
-                <viewController id="vqz-aD-fdj" customClass="WaterViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="vqz-aD-fdj" customClass="WaterViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rf3-83-k7t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -853,7 +853,7 @@
         <!--Settings Table View Controller-->
         <scene sceneID="ixs-U7-rHk">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="52z-jq-aRL" customClass="SettingsTableViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="52z-jq-aRL" customClass="SettingsTableViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="w64-Bh-Z0D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -928,7 +928,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="MYb-tD-Qnz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="lgG-ew-anu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="lgG-ew-anu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="E8V-fu-iir" kind="unwind" unwindAction="unwind:" id="Ucv-bQ-LQL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="allWaterPicker" destination="Euy-Md-ku5" id="c0a-td-ZPi"/>
@@ -936,6 +941,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN7-BF-pKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="E8V-fu-iir" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2007" y="2265"/>
         </scene>

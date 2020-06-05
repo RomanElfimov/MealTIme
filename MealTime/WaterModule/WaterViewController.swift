@@ -12,34 +12,53 @@ class WaterViewController: UIViewController {
     
     var currentWeekDay: Int = 0
     var waterProg: Float = 0
-
+    
     var drinkedWater: Float = 0
-    var waterGlass: Float = 200
-    var allWater: Float = 1600
+    var waterGlass: Float = 150
+    var allWater: Float = 1500
     
     @IBOutlet weak var waterLabel: UILabel!
     @IBOutlet weak var waterProgress: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        waterProgress.progress = waterProg
-        waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
+            
+        textForLabelAndProgress()
         
         print("VIEW DID LOAD")
         abc()
     }
     
     
+    @IBAction func unwind(_ seg: UIStoryboardSegue) {
+        guard let settingsVC = seg.source as? SettingsTableViewController else {
+            print("Failed to settingsVC")
+            return
+        }
+        
+        waterProg = 0
+        saveWaterProgress(progress: waterProg)
+        
+        waterGlass = settingsVC.getOneGlassFromPicker()
+        allWater = settingsVC.getAllWaterFromPicker()
+        
+        saveWaterGlass(waterGlass: waterGlass)
+        saveAllWater(allWater: allWater)
+        
+        textForLabelAndProgress()
+    }
+    
+    
     @IBAction func addWaterButtonTapped(_ sender: Any) {
+        
         drinkedWater = waterGlass / allWater
         
         waterProg += drinkedWater
         
+        textForLabelAndProgress()
         
-        waterProgress.progress = waterProg
-        waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
         saveWaterProgress(progress: waterProg)
+        
         print("addWaterButton \(waterProg * allWater)")
     }
     
@@ -51,6 +70,7 @@ class WaterViewController: UIViewController {
         saveWaterProgress(progress: waterProg)
         print("minusWatterButton \(waterProg * allWater)")
     }
+    
     
     // Вызывается в sceneDidBecomeActive
     func abc() {
@@ -64,10 +84,10 @@ class WaterViewController: UIViewController {
         
         
         if weekday != currentWeekDay {
-
+            
             currentWeekDay = weekday
             saveCurrentWeekDay(weekDay: currentWeekDay)
-
+            
             waterProg = 0
             waterProgress.progress = waterProg
             waterLabel.text = "0 / \(Int(allWater))"
@@ -78,9 +98,7 @@ class WaterViewController: UIViewController {
             print("currentWeekDay \(currentWeekDay) after if")
             
             waterProg = getWater()
-            //in function
-            waterProgress.progress = waterProg
-            waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
+            textForLabelAndProgress()
         } else {
             print("else block")
             
@@ -88,13 +106,16 @@ class WaterViewController: UIViewController {
             print("else block progress \(waterProg)")
             
             //in function
-            waterProgress.progress = waterProg
-            waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
+            textForLabelAndProgress()
             
             saveWaterProgress(progress: waterProg)
-       }
+            waterProg = getWater()
+        }
+    }
     
-    
+    func textForLabelAndProgress() {
+        waterProgress.progress = waterProg
+        waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
     }
     
     
@@ -108,6 +129,17 @@ class WaterViewController: UIViewController {
         UserDefaults.standard.synchronize()
     }
     
+    func saveWaterGlass(waterGlass: Float) {
+        UserDefaults.standard.set(waterGlass, forKey: "oneGlass")
+        UserDefaults.standard.synchronize()
+    }
+    
+    func saveAllWater(allWater: Float) {
+        UserDefaults.standard.set(allWater, forKey: "allWater")
+        UserDefaults.standard.synchronize()
+    }
+    
+    
     
     func getWater() -> Float {
         return UserDefaults.standard.float(forKey: "waterProgress")
@@ -115,6 +147,14 @@ class WaterViewController: UIViewController {
     
     func getCurrentWeekDay() -> Int {
         return UserDefaults.standard.integer(forKey: "weekDay")
+    }
+    
+    func getWaterGlass() -> Float {
+        return UserDefaults.standard.float(forKey: "oneGlass")
+    }
+    
+    func getAllWater() -> Float {
+        return UserDefaults.standard.float(forKey: "allWater")
     }
     
 }

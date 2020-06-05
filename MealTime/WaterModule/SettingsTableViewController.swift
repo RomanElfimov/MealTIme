@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-
+    
     let waterVC = WaterViewController()
     
     var pickedAllWater: Float = 1500
@@ -17,41 +17,44 @@ class SettingsTableViewController: UITableViewController {
     
     var pickedOneGlass: Float = 150
     var oneGlassArray: [String] = ["150", "200", "250", "300", "350", "400", "450", "500"]
- 
+    
     @IBOutlet weak var allWaterPicker: UIPickerView!
     @IBOutlet weak var oneGlassPicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        
-        waterVC.allWater = getAllWater()
-        waterVC.waterGlass = getOneGlass()
-
     }
     
     
-    func savePickedAllWater(allWater: Float) {
-        UserDefaults.standard.set(allWater, forKey: "allWater")
-        UserDefaults.standard.synchronize()
+    func getAllWaterFromPicker() -> Float {
+        return pickedAllWater
     }
     
-    func savePickedOneGlass(glass: Float) {
-        UserDefaults.standard.set(glass, forKey: "oneGlass")
-        UserDefaults.standard.synchronize()
+    func getOneGlassFromPicker() -> Float {
+        return pickedOneGlass
     }
     
-    func getAllWater() -> Float {
-        return UserDefaults.standard.float(forKey: "allWater")
-    }
-
-    func getOneGlass() -> Float {
-        return UserDefaults.standard.float(forKey: "oneGlass")
-    }
-
+    
+    
+    //
+    //    func savePickedAllWater(allWater: Float) {
+    //        UserDefaults.standard.set(allWater, forKey: "allWater")
+    //        UserDefaults.standard.synchronize()
+    //    }
+    //
+    //    func savePickedOneGlass(glass: Float) {
+    //        UserDefaults.standard.set(glass, forKey: "oneGlass")
+    //        UserDefaults.standard.synchronize()
+    //    }
+    //
+    //    func getAllWater() -> Float {
+    //        return UserDefaults.standard.float(forKey: "allWater")
+    //    }
+    //
+    //    func getOneGlass() -> Float {
+    //        return UserDefaults.standard.float(forKey: "oneGlass")
+    //    }
+    
 }
 
 
@@ -87,14 +90,9 @@ extension SettingsTableViewController: UIPickerViewDataSource, UIPickerViewDeleg
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if pickerView.tag == 0 {
-            //waterVC.allWater = Float(allWaterPickerNamesArray[row])!
-            //savePickedAllWater(allWater: waterVC.allWater)
-            // и т.д.
             pickedAllWater = Float(allWaterPickerNamesArray[row])!
-            savePickedAllWater(allWater: pickedAllWater)
         } else {
             pickedOneGlass = Float(oneGlassArray[row])!
-            savePickedOneGlass(glass: pickedOneGlass)
         }
         
         
