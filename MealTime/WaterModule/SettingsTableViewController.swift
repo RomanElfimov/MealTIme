@@ -35,26 +35,6 @@ class SettingsTableViewController: UITableViewController {
     }
     
     
-    
-    //
-    //    func savePickedAllWater(allWater: Float) {
-    //        UserDefaults.standard.set(allWater, forKey: "allWater")
-    //        UserDefaults.standard.synchronize()
-    //    }
-    //
-    //    func savePickedOneGlass(glass: Float) {
-    //        UserDefaults.standard.set(glass, forKey: "oneGlass")
-    //        UserDefaults.standard.synchronize()
-    //    }
-    //
-    //    func getAllWater() -> Float {
-    //        return UserDefaults.standard.float(forKey: "allWater")
-    //    }
-    //
-    //    func getOneGlass() -> Float {
-    //        return UserDefaults.standard.float(forKey: "oneGlass")
-    //    }
-    
 }
 
 

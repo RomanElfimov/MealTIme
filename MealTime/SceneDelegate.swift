@@ -28,21 +28,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-        let tbc = self.window?.rootViewController as! UITabBarController
-        let nc = tbc.viewControllers?.last as! UINavigationController
-        let vc = nc.viewControllers.first as! WaterViewController
         
-        if vc.waterProgress != nil && (vc.waterLabel != nil) {
-            vc.abc()
-        }
-        
+        let tabBar = window?.rootViewController as! UITabBarController
+        let nvc = tabBar.viewControllers?.first as! UINavigationController
+        let waterVC = nvc.viewControllers.first as! WaterViewController
+        waterVC.abc()
+        print("sceneDidBecomeActive")
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
+        
+        let tabBar = window?.rootViewController as! UITabBarController
+        let nvc = tabBar.viewControllers?.first as! UINavigationController
+        let waterVC = nvc.viewControllers.first as! WaterViewController
+        waterVC.saveWaterProgress(progress: waterVC.waterProg)
+        
+        print("sceneWillResignActive")
     }
     
     func sceneWillEnterForeground(_ scene: UIScene) {
