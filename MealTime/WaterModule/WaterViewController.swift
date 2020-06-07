@@ -14,35 +14,55 @@ class WaterViewController: UIViewController {
     var waterProg: Float = 0
     
     var drinkedWater: Float = 0
-    var waterGlass: Float = 200
-    var allWater: Float = 1600
+    var waterGlass: Float = 150
+    var allWater: Float = 1500
+    
+    let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
     
     @IBOutlet weak var waterLabel: UILabel!
     @IBOutlet weak var waterProgress: UIProgressView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("VIEW DID LOAD")
+        
+        
+//        if launchedBefore  {
+//            print("Not first launch.")
+//            waterGlass = getWaterGlass()
+//            allWater = getAllWater()
+//            textForLabelAndProgress()
+//        } else {
+//            print("First launch, setting UserDefault.")
+//            saveAllWater(allWater: 1500)
+//            saveWaterGlass(waterGlass: 150)
+//            //waterProg = 0
+//            UserDefaults.standard.set(true, forKey: "launchedBefore")
+//        }
+        
+        
     }
     
     
-//    @IBAction func unwind(_ seg: UIStoryboardSegue) {
-//        guard let settingsVC = seg.source as? SettingsTableViewController else {
-//            print("Failed to settingsVC")
-//            return
-//        }
-//
-//        waterProg = 0
-//        saveWaterProgress(progress: waterProg)
-//
-//        waterGlass = settingsVC.getOneGlassFromPicker()
-//        allWater = settingsVC.getAllWaterFromPicker()
-//
-//        saveWaterGlass(waterGlass: waterGlass)
-//        saveAllWater(allWater: allWater)
-//
-//    }
+    @IBAction func unwind(_ seg: UIStoryboardSegue) {
+        guard let settingsVC = seg.source as? SettingsTableViewController else {
+            print("Failed to settingsVC")
+            return
+        }
+        
+        waterProg = 0
+        saveWaterProgress(progress: waterProg)
+        
+        waterGlass = settingsVC.getOneGlassFromPicker()
+        allWater = settingsVC.getAllWaterFromPicker()
+        
+        saveWaterGlass(waterGlass: waterGlass)
+        saveAllWater(allWater: allWater)
+        print("SAVING glass: \(waterGlass) and allWater \(allWater)")
+        
+        textForLabelAndProgress()
+    }
     
     
     @IBAction func addWaterButtonTapped(_ sender: Any) {
@@ -51,16 +71,17 @@ class WaterViewController: UIViewController {
         
         waterProg += drinkedWater
         
-        waterProgress.progress = waterProg
-        waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
-                
+        showWaterAndProgress()
+        
         print("addWaterButton \(waterProg * allWater)")
     }
     
     @IBAction func minusWaterButtonTapped(_ sender: Any) {
+        drinkedWater = waterGlass / allWater
+        
         waterProg -= drinkedWater
-        waterProgress.progress = waterProg
-        waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
+        
+        showWaterAndProgress()
         
         print("minusWatterButton \(waterProg * allWater)")
     }
@@ -93,8 +114,7 @@ class WaterViewController: UIViewController {
             
             waterProg = getWater()
             //in function
-            waterProgress.progress = waterProg
-            waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
+            showWaterAndProgress()
         } else {
             print("else block")
             
@@ -102,8 +122,7 @@ class WaterViewController: UIViewController {
             print("else block progress \(waterProg)")
             
             //in function
-            waterProgress.progress = waterProg
-            waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
+            showWaterAndProgress()
             
             saveWaterProgress(progress: waterProg)
         }
@@ -125,15 +144,16 @@ class WaterViewController: UIViewController {
         UserDefaults.standard.synchronize()
     }
     
-//    func saveWaterGlass(waterGlass: Float) {
-//        UserDefaults.standard.set(waterGlass, forKey: "oneGlass")
-//        UserDefaults.standard.synchronize()
-//    }
-//
-//    func saveAllWater(allWater: Float) {
-//        UserDefaults.standard.set(allWater, forKey: "allWater")
-//        UserDefaults.standard.synchronize()
-//    }
+    
+    func saveWaterGlass(waterGlass: Float) {
+        UserDefaults.standard.set(waterGlass, forKey: "oneGlass")
+        UserDefaults.standard.synchronize()
+    }
+    
+    func saveAllWater(allWater: Float) {
+        UserDefaults.standard.set(allWater, forKey: "allWater")
+        UserDefaults.standard.synchronize()
+    }
     
     
     
@@ -144,14 +164,31 @@ class WaterViewController: UIViewController {
     func getCurrentWeekDay() -> Int {
         return UserDefaults.standard.integer(forKey: "weekDay")
     }
-//
-//    func getWaterGlass() -> Float {
-//        return UserDefaults.standard.float(forKey: "oneGlass")
-//    }
-//
-//    func getAllWater() -> Float {
-//        return UserDefaults.standard.float(forKey: "allWater")
-//    }
+    
+    
+    func getWaterGlass() -> Float {
+        return UserDefaults.standard.float(forKey: "oneGlass")
+    }
+    
+    func getAllWater() -> Float {
+        return UserDefaults.standard.float(forKey: "allWater")
+    }
+    
+    
+    func saveIsFirstLaunching(isFirstLaunching: Bool) {
+        UserDefaults.standard.set(isFirstLaunching, forKey: "isFirstLaunch")
+        UserDefaults.standard.synchronize()
+    }
+    func getIsFirstLaunch() -> Bool {
+        return UserDefaults.standard.bool(forKey: "isFirstLaunch")
+    }
+    
+    
+    
+    func showWaterAndProgress() {
+        waterProgress.progress = waterProg
+        waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
+    }
     
 }
 

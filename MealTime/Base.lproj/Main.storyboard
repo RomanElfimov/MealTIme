@@ -836,6 +836,9 @@
                     <navigationItem key="navigationItem" id="CLZ-jx-jNM">
                         <barButtonItem key="leftBarButtonItem" image="Settings" id="hbX-Gp-4xX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="52z-jq-aRL" kind="show" id="If0-ji-g4b"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -928,7 +931,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="lgG-ew-anu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="E8V-fu-iir" kind="unwind" unwindAction="unwind:" id="Ucv-bQ-LQL"/>
+                                <segue destination="E8V-fu-iir" kind="unwind" unwindAction="unwind:" id="mYq-K2-YWE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
