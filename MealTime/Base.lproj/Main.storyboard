@@ -372,7 +372,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcm-nZ-A00" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3196" y="84"/>
+            <point key="canvasLocation" x="-1226" y="138"/>
         </scene>
         <!--Питание-->
         <scene sceneID="7jg-bi-I3g">
@@ -848,7 +848,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6z-PI-TqV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="-1454"/>
+            <point key="canvasLocation" x="1048" y="-1454"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="ixs-U7-rHk">
@@ -943,7 +943,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN7-BF-pKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="E8V-fu-iir" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1983" y="-1454"/>
+            <point key="canvasLocation" x="1825" y="-1454"/>
         </scene>
         <!--Вода-->
         <scene sceneID="1S7-8c-a80">
@@ -963,7 +963,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QId-nX-i9s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="-1454"/>
+            <point key="canvasLocation" x="138" y="-1454"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

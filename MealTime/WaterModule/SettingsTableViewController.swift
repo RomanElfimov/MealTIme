@@ -10,22 +10,22 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
-    let waterVC = WaterViewController()
-    
+    //MARK: - Properties
+    // picker для выбора всего объема воды
     var pickedAllWater: Float = 1500
     var allWaterPickerNamesArray: [String] = ["1500", "1600", "1700", "1800", "1900", "2000", "2000", "2100", "2200", "2300", "2300", "2400", "2500", "2600", "2700", "2800", "2900", "3000", "3100", "3200", "3300", "3400", "3500"]
     
+    // picker для выбора объема одного стакана
     var pickedOneGlass: Float = 150
     var oneGlassArray: [String] = ["150", "200", "250", "300", "350", "400", "450", "500"]
     
+    //MARK: - Outlets
     @IBOutlet weak var allWaterPicker: UIPickerView!
     @IBOutlet weak var oneGlassPicker: UIPickerView!
+
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
+    //MARK: - Methods
+    // Возвращают всю воду и один стакан. Используем в WaterViewController
     func getAllWaterFromPicker() -> Float {
         return pickedAllWater
     }
@@ -33,12 +33,11 @@ class SettingsTableViewController: UITableViewController {
     func getOneGlassFromPicker() -> Float {
         return pickedOneGlass
     }
-    
-    
+   
 }
 
 
-
+//MARK: - Extension UIPickerViewDataSource
 extension SettingsTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - UIPickerViewDataSource
@@ -46,6 +45,7 @@ extension SettingsTableViewController: UIPickerViewDataSource, UIPickerViewDeleg
         return 1
     }
     
+    // Количество ячеек
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         if pickerView.tag == 0 {
@@ -53,18 +53,17 @@ extension SettingsTableViewController: UIPickerViewDataSource, UIPickerViewDeleg
         } else {
             return oneGlassArray.count
         }
-        
     }
     
     // MARK: - UIPickerViewDelegate
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
+        // Названия для ячеек
         if pickerView.tag == 0 {
             return allWaterPickerNamesArray[row]
         } else {
             return oneGlassArray[row]
         }
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -74,8 +73,5 @@ extension SettingsTableViewController: UIPickerViewDataSource, UIPickerViewDeleg
         } else {
             pickedOneGlass = Float(oneGlassArray[row])!
         }
-        
-        
-    }
-    
+    }    
 }

@@ -10,41 +10,25 @@ import UIKit
 
 class WaterViewController: UIViewController {
     
-    var currentWeekDay: Int = 0
-    var waterProg: Float = 0
+    //MARK: - Properties
+    // Константа помогает определить первый запуск приложения
+    let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
     
+    //Текущий день недели - используется, когда определяем наступление нового дня
+    var currentWeekDay: Int = 0
+    
+    var waterProg: Float = 0
     var drinkedWater: Float = 0
     var waterGlass: Float = 150
     var allWater: Float = 1500
     
-    let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-    
+
+    //MARK: - Outlets
     @IBOutlet weak var waterLabel: UILabel!
     @IBOutlet weak var waterProgress: UIProgressView!
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        print("VIEW DID LOAD")
-        
-        
-//        if launchedBefore  {
-//            print("Not first launch.")
-//            waterGlass = getWaterGlass()
-//            allWater = getAllWater()
-//            textForLabelAndProgress()
-//        } else {
-//            print("First launch, setting UserDefault.")
-//            saveAllWater(allWater: 1500)
-//            saveWaterGlass(waterGlass: 150)
-//            //waterProg = 0
-//            UserDefaults.standard.set(true, forKey: "launchedBefore")
-//        }
-        
-        
-    }
     
-    
+
+    //MARK: - Actions
     @IBAction func unwind(_ seg: UIStoryboardSegue) {
         guard let settingsVC = seg.source as? SettingsTableViewController else {
             print("Failed to settingsVC")
@@ -64,7 +48,7 @@ class WaterViewController: UIViewController {
         textForLabelAndProgress()
     }
     
-    
+    // Добавить воду
     @IBAction func addWaterButtonTapped(_ sender: Any) {
         
         drinkedWater = waterGlass / allWater
@@ -76,6 +60,7 @@ class WaterViewController: UIViewController {
         print("addWaterButton \(waterProg * allWater)")
     }
     
+    // Убрать воду
     @IBAction func minusWaterButtonTapped(_ sender: Any) {
         drinkedWater = waterGlass / allWater
         
@@ -87,8 +72,11 @@ class WaterViewController: UIViewController {
     }
     
     
+    //MARK: - Methods
+    
+    // Если наступил новый день - обнуляем прогресс, иначе - прибавляем
     // Вызывается в sceneDidBecomeActive
-    func abc() {
+    func newDayComingCheck() {
         
         let date = Date()
         let calendar = Calendar.current
@@ -128,12 +116,14 @@ class WaterViewController: UIViewController {
         }
     }
     
+    // Обновить прогресс в label и progress view
     func textForLabelAndProgress() {
         waterProgress.progress = waterProg
         waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
     }
     
     
+    //MARK: - save data methods
     func saveWaterProgress(progress: Float) {
         UserDefaults.standard.set(progress, forKey: "waterProgress")
         UserDefaults.standard.synchronize()
@@ -157,6 +147,7 @@ class WaterViewController: UIViewController {
     
     
     
+    //MARK: - get data methods
     func getWater() -> Float {
         return UserDefaults.standard.float(forKey: "waterProgress")
     }
@@ -175,17 +166,8 @@ class WaterViewController: UIViewController {
     }
     
     
-    func saveIsFirstLaunching(isFirstLaunching: Bool) {
-        UserDefaults.standard.set(isFirstLaunching, forKey: "isFirstLaunch")
-        UserDefaults.standard.synchronize()
-    }
-    func getIsFirstLaunch() -> Bool {
-        return UserDefaults.standard.bool(forKey: "isFirstLaunch")
-    }
-    
-    
-    
-    func showWaterAndProgress() {
+    //MARK: - Private Methods
+    private func showWaterAndProgress() {
         waterProgress.progress = waterProg
         waterLabel.text = "\(Int(waterProg * allWater)) / \(Int(allWater))"
     }
@@ -193,6 +175,8 @@ class WaterViewController: UIViewController {
 }
 
 
+//MARK: - Extension UIProgressView
+// Высота progress view
 extension UIProgressView {
     
     @IBInspectable var barHeight : CGFloat {

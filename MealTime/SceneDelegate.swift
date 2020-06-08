@@ -32,11 +32,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBar = window?.rootViewController as! UITabBarController
         let nvc = tabBar.viewControllers?.first as! UINavigationController
         let waterVC = nvc.viewControllers.first as! WaterViewController
-        waterVC.abc()
+        waterVC.newDayComingCheck()
         print("sceneDidBecomeActive")
-        
-        
-        
+    
         if waterVC.launchedBefore  {
             print("Not first launch.")
             waterVC.waterGlass = waterVC.getWaterGlass()
