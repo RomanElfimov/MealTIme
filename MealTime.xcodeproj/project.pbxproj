@@ -29,6 +29,9 @@
 		E94F1B972477ACAF00E11C40 /* BreakfastStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B872477ACAF00E11C40 /* BreakfastStorageManager.swift */; };
 		E94F1B982477ACAF00E11C40 /* LunchStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B882477ACAF00E11C40 /* LunchStorageManager.swift */; };
 		E950F52C2487F501007A53B7 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950F52B2487F501007A53B7 /* WaterViewController.swift */; };
+		E953A044248E9F4300FE269C /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A043248E9F4300FE269C /* WeightViewController.swift */; };
+		E953A067248EA2DA00FE269C /* AddNewWeightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A066248EA2DA00FE269C /* AddNewWeightTableViewController.swift */; };
+		E953A069248EA30800FE269C /* WeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A068248EA30800FE269C /* WeightCell.swift */; };
 		E969A15D2486AE65006978C2 /* LineChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969A15C2486AE65006978C2 /* LineChartsViewController.swift */; };
 		E96BC204248930260073C0C1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96BC203248930260073C0C1 /* SettingsTableViewController.swift */; };
 		E99A7C22247EC9A5003ADE3D /* CardioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A7C21247EC9A5003ADE3D /* CardioViewController.swift */; };
@@ -67,6 +70,9 @@
 		E94F1B872477ACAF00E11C40 /* BreakfastStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastStorageManager.swift; sourceTree = "<group>"; };
 		E94F1B882477ACAF00E11C40 /* LunchStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchStorageManager.swift; sourceTree = "<group>"; };
 		E950F52B2487F501007A53B7 /* WaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
+		E953A043248E9F4300FE269C /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		E953A066248EA2DA00FE269C /* AddNewWeightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWeightTableViewController.swift; sourceTree = "<group>"; };
+		E953A068248EA30800FE269C /* WeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightCell.swift; sourceTree = "<group>"; };
 		E969A15C2486AE65006978C2 /* LineChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartsViewController.swift; sourceTree = "<group>"; };
 		E96BC203248930260073C0C1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E99A7C21247EC9A5003ADE3D /* CardioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 				E94F1B732477ACAF00E11C40 /* MealTImeModule */,
 				E99A7C20247EC98C003ADE3D /* CardionModule */,
 				E950F52D2487F509007A53B7 /* WaterModule */,
+				E953A045248E9F4A00FE269C /* WeightModule */,
 				E91AD7F8246E695900BC2E60 /* Main.storyboard */,
 				E91AD7FB246E695A00BC2E60 /* Assets.xcassets */,
 				E91AD7FD246E695A00BC2E60 /* LaunchScreen.storyboard */,
@@ -208,6 +215,16 @@
 				E96BC203248930260073C0C1 /* SettingsTableViewController.swift */,
 			);
 			path = WaterModule;
+			sourceTree = "<group>";
+		};
+		E953A045248E9F4A00FE269C /* WeightModule */ = {
+			isa = PBXGroup;
+			children = (
+				E953A043248E9F4300FE269C /* WeightViewController.swift */,
+				E953A066248EA2DA00FE269C /* AddNewWeightTableViewController.swift */,
+				E953A068248EA30800FE269C /* WeightCell.swift */,
+			);
+			path = WeightModule;
 			sourceTree = "<group>";
 		};
 		E99A7C20247EC98C003ADE3D /* CardionModule */ = {
@@ -380,12 +397,15 @@
 				E99A7C24247ECE68003ADE3D /* AddNewCardioViewController.swift in Sources */,
 				E91AD7F3246E695900BC2E60 /* AppDelegate.swift in Sources */,
 				E94F1B932477ACAF00E11C40 /* DatePickerView.swift in Sources */,
+				E953A044248E9F4300FE269C /* WeightViewController.swift in Sources */,
 				E94F1B8F2477ACAF00E11C40 /* NewDishViewController.swift in Sources */,
 				E94F1B8B2477ACAF00E11C40 /* DinnerModel.swift in Sources */,
+				E953A069248EA30800FE269C /* WeightCell.swift in Sources */,
 				E94CE818247ED47400F8AF2D /* CardioCell.swift in Sources */,
 				E96BC204248930260073C0C1 /* SettingsTableViewController.swift in Sources */,
 				E99A7C22247EC9A5003ADE3D /* CardioViewController.swift in Sources */,
 				E94F1B8D2477ACAF00E11C40 /* DishesTableViewCell.swift in Sources */,
+				E953A067248EA2DA00FE269C /* AddNewWeightTableViewController.swift in Sources */,
 				E969A15D2486AE65006978C2 /* LineChartsViewController.swift in Sources */,
 				E950F52C2487F501007A53B7 /* WaterViewController.swift in Sources */,
 				E94F1B962477ACAF00E11C40 /* DinnerStorageManager.swift in Sources */,
