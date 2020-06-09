@@ -32,6 +32,8 @@ class CardioViewController: UIViewController {
             
             let cardio = cardioArray[indexPath.row]
             newCardioVC.currentCardio = cardio
+            
+            newCardioVC.navigationItem.rightBarButtonItem?.title = "Изменить"
         }
     }
     

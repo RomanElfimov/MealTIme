@@ -984,34 +984,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mej-v5-Dkt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mej-v5-Dkt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="pow-az-Kk7" detailTextLabel="Pbx-2d-aKV" style="IBUITableViewCellStyleSubtitle" id="X8s-e9-k26" customClass="WeightCell" customModule="MealTime" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="77" id="X8s-e9-k26" customClass="WeightCell" customModule="MealTime" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8s-e9-k26" id="bYo-dG-VSY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pow-az-Kk7">
-                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pbx-2d-aKV">
-                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Xxy-KS-mx5">
+                                                    <rect key="frame" x="20" y="13" width="374" height="53"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x92-i2-3Il">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quK-p0-ESg">
+                                                            <rect key="frame" x="0.0" y="29" width="374" height="24"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Xxy-KS-mx5" secondAttribute="bottom" id="HQj-Dt-bc3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Xxy-KS-mx5" secondAttribute="trailing" id="Iwn-ly-zc9"/>
+                                                <constraint firstItem="Xxy-KS-mx5" firstAttribute="leading" secondItem="bYo-dG-VSY" secondAttribute="leadingMargin" id="ldp-n7-F3D"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="x92-i2-3Il" id="sJn-0O-d1V"/>
+                                            <outlet property="weightLabel" destination="quK-p0-ESg" id="bGE-1h-f3u"/>
                                             <segue destination="OZd-GH-Fxu" kind="show" identifier="showDetail" id="7II-q9-Vjk"/>
                                         </connections>
                                     </tableViewCell>
@@ -1033,8 +1043,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="frh-Hc-qcJ">
                         <leftBarButtonItems>
-                            <barButtonItem title="Item" image="statistics" id="S1T-lB-5vE"/>
-                            <barButtonItem title="Item" id="bv3-dy-pTY"/>
+                            <barButtonItem title="Item" image="statistics" id="S1T-lB-5vE">
+                                <connections>
+                                    <segue destination="0TM-6c-H3h" kind="show" id="kK2-AN-xpF"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="calculator" id="bv3-dy-pTY">
+                                <connections>
+                                    <segue destination="wy9-88-dau" kind="show" id="kmF-Hb-9Zm"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="D8c-mn-hkd">
                             <connections>
@@ -1049,6 +1067,166 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cW-Yk-MUT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="2259.375"/>
+        </scene>
+        <!--Weight Charts View Controller-->
+        <scene sceneID="psX-cb-Tnh">
+            <objects>
+                <viewController id="0TM-6c-H3h" customClass="WeightChartsViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kkc-rr-Emi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw6-eM-AbR" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="108" width="414" height="685"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vw6-eM-AbR" firstAttribute="trailing" secondItem="i9D-nd-saY" secondAttribute="trailing" id="2Ic-V9-FNE"/>
+                            <constraint firstItem="vw6-eM-AbR" firstAttribute="top" secondItem="i9D-nd-saY" secondAttribute="top" constant="20" id="FRn-QZ-0eO"/>
+                            <constraint firstItem="vw6-eM-AbR" firstAttribute="leading" secondItem="i9D-nd-saY" secondAttribute="leading" id="HO2-Iy-sr4"/>
+                            <constraint firstItem="i9D-nd-saY" firstAttribute="bottom" secondItem="vw6-eM-AbR" secondAttribute="bottom" constant="20" id="NdA-9r-Lro"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i9D-nd-saY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="O8s-Le-jos"/>
+                    <connections>
+                        <outlet property="weightChartView" destination="vw6-eM-AbR" id="0IB-4P-M5W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bo2-2g-YzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492.75362318840581" y="2988.6160714285711"/>
+        </scene>
+        <!--CalculateBMI View Controller-->
+        <scene sceneID="Sra-m5-dcF">
+            <objects>
+                <viewController id="wy9-88-dau" customClass="CalculateBMIViewController" customModule="MealTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sy6-2m-VHy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nUN-tT-XSZ">
+                                <rect key="frame" x="20" y="108" width="374" height="66"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рост" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAJ-OJ-JkM">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="см" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zbm-vN-K8k">
+                                        <rect key="frame" x="0.0" y="32" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Zbm-vN-K8k" secondAttribute="bottom" id="0uB-O9-vUw"/>
+                                    <constraint firstItem="Zbm-vN-K8k" firstAttribute="leading" secondItem="nUN-tT-XSZ" secondAttribute="leading" id="AwB-V7-ecT"/>
+                                    <constraint firstAttribute="trailing" secondItem="AAJ-OJ-JkM" secondAttribute="trailing" id="GJx-RO-x1i"/>
+                                    <constraint firstItem="AAJ-OJ-JkM" firstAttribute="leading" secondItem="nUN-tT-XSZ" secondAttribute="leading" id="JP7-M9-XHu"/>
+                                    <constraint firstItem="AAJ-OJ-JkM" firstAttribute="top" secondItem="nUN-tT-XSZ" secondAttribute="top" id="lkF-mg-Ddq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zbm-vN-K8k" secondAttribute="trailing" id="oPW-48-6WM"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tu5-4u-RMQ">
+                                <rect key="frame" x="20" y="209" width="374" height="66"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWB-fg-Si6">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="кг" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u5B-KV-INX">
+                                        <rect key="frame" x="0.0" y="32" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="u5B-KV-INX" secondAttribute="bottom" id="0hn-wE-AQ6"/>
+                                    <constraint firstAttribute="trailing" secondItem="u5B-KV-INX" secondAttribute="trailing" id="28R-EP-K94"/>
+                                    <constraint firstItem="UWB-fg-Si6" firstAttribute="top" secondItem="Tu5-4u-RMQ" secondAttribute="top" id="2Fa-Cl-kCZ"/>
+                                    <constraint firstItem="UWB-fg-Si6" firstAttribute="leading" secondItem="Tu5-4u-RMQ" secondAttribute="leading" id="XjI-28-xxB"/>
+                                    <constraint firstItem="u5B-KV-INX" firstAttribute="leading" secondItem="Tu5-4u-RMQ" secondAttribute="leading" id="dnh-4l-Lu0"/>
+                                    <constraint firstAttribute="trailing" secondItem="UWB-fg-Si6" secondAttribute="trailing" id="gb7-UB-RXt"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvw-P6-arN">
+                                <rect key="frame" x="20" y="315" width="374" height="30"/>
+                                <state key="normal" title="Рассчитать"/>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="wy9-88-dau" eventType="touchUpInside" id="OU8-jM-f3T"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAL-YR-TNd">
+                                <rect key="frame" x="20" y="398" width="374" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ИМТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eU-v4-2Dn">
+                                <rect key="frame" x="20" y="359" width="374" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zNj-um-1ne">
+                                <rect key="frame" x="0.0" y="436" width="414" height="377"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Индекс массы тела является показателем отношения веса и роста человека. Данный параметр помогает определить отклонения от нормальной массы тела в ту или иную сторону. Лишний вес опасен для человеческого здоровья, поскольку часто приводят к сердечным заболеваниям. Онлайн калькулятор индекса массы тела позволяет быстро и точно узнать, насколько ваш показатель веса соответствует норме. Чтобы рассчитать индекс массы тела необходимо выбрать в представленном сервисе свой рост и вес.
+
+Индекс массы тела для женщин считается нормальным, если показатель входит в диапазон от 20 до 22. Для мужчин этот показатель должен быть от 23 до 25. Статистика показывает, что люди, у которых данный показатель остается в пределах 18-22, живут в среднем дольше, чем те, у кого есть проблемы с весом.
+
+Если показатель ИМТ превышает 25, то это сигнал, что вам нужно менять свой образ жизни. Важно отметить, что используемая формула для расчета индекса массы тела может переоценить показатель ожирения для людей атлетического сложения, поскольку вычисления не учитывают мышечную массу.
+
+Индекс массы тела стал особенно актуален в западных странах, где проблема с ожирением встала достаточно остро. В самом начале расчет имт разрабатывался для социологических исследования, поэтому ставить медицинский диагноз с помощью этих расчетов не совсем правильно. 
+Однако доступность и простота расчета сделала данный калькулятор очень популярным среди населения. Если индекс превышает число 30, то это с большой долей вероятности говорит об ожирении. 
+Нужно понимать, что индекс массы тела не годится для постановления диагноза, но он может помочь в качестве контроля в процессе опробования новой фитнес-программы или диеты. 
+Калькулятор ИМТ определит точку отсчета и позволит прослеживать изменения веса тела. </mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nUN-tT-XSZ" firstAttribute="top" secondItem="wpC-dw-v18" secondAttribute="top" constant="20" id="07L-ju-z0V"/>
+                            <constraint firstItem="7eU-v4-2Dn" firstAttribute="top" secondItem="lvw-P6-arN" secondAttribute="bottom" constant="14" id="0Zk-FA-bZa"/>
+                            <constraint firstItem="7eU-v4-2Dn" firstAttribute="leading" secondItem="wpC-dw-v18" secondAttribute="leading" constant="20" id="1FG-Ch-e0K"/>
+                            <constraint firstItem="pAL-YR-TNd" firstAttribute="leading" secondItem="wpC-dw-v18" secondAttribute="leading" constant="20" id="2mz-cZ-hEg"/>
+                            <constraint firstItem="pAL-YR-TNd" firstAttribute="top" secondItem="7eU-v4-2Dn" secondAttribute="bottom" constant="15" id="2uI-Mt-Fsj"/>
+                            <constraint firstItem="zNj-um-1ne" firstAttribute="top" secondItem="pAL-YR-TNd" secondAttribute="bottom" constant="14" id="AXp-d5-dEt"/>
+                            <constraint firstItem="Tu5-4u-RMQ" firstAttribute="top" secondItem="nUN-tT-XSZ" secondAttribute="bottom" constant="35" id="AeY-iQ-HCD"/>
+                            <constraint firstItem="wpC-dw-v18" firstAttribute="trailing" secondItem="7eU-v4-2Dn" secondAttribute="trailing" constant="20" id="BH5-Em-vgj"/>
+                            <constraint firstItem="nUN-tT-XSZ" firstAttribute="leading" secondItem="wpC-dw-v18" secondAttribute="leading" constant="20" id="Em1-3z-grU"/>
+                            <constraint firstItem="zNj-um-1ne" firstAttribute="trailing" secondItem="wpC-dw-v18" secondAttribute="trailing" id="Nkk-ct-hDO"/>
+                            <constraint firstItem="zNj-um-1ne" firstAttribute="bottom" secondItem="wpC-dw-v18" secondAttribute="bottom" id="Qzc-pD-FtA"/>
+                            <constraint firstItem="wpC-dw-v18" firstAttribute="trailing" secondItem="pAL-YR-TNd" secondAttribute="trailing" constant="20" id="Tu3-yO-osb"/>
+                            <constraint firstItem="Tu5-4u-RMQ" firstAttribute="leading" secondItem="wpC-dw-v18" secondAttribute="leading" constant="20" id="WtH-mK-hiW"/>
+                            <constraint firstItem="wpC-dw-v18" firstAttribute="trailing" secondItem="Tu5-4u-RMQ" secondAttribute="trailing" constant="20" id="ZsA-X6-ebd"/>
+                            <constraint firstItem="zNj-um-1ne" firstAttribute="leading" secondItem="wpC-dw-v18" secondAttribute="leading" id="hyy-9U-Zhg"/>
+                            <constraint firstItem="lvw-P6-arN" firstAttribute="top" secondItem="Tu5-4u-RMQ" secondAttribute="bottom" constant="40" id="nay-pN-0e5"/>
+                            <constraint firstItem="wpC-dw-v18" firstAttribute="trailing" secondItem="nUN-tT-XSZ" secondAttribute="trailing" constant="20" id="nbf-gY-9P9"/>
+                            <constraint firstItem="lvw-P6-arN" firstAttribute="leading" secondItem="wpC-dw-v18" secondAttribute="leading" constant="20" id="pud-Vx-0tA"/>
+                            <constraint firstItem="wpC-dw-v18" firstAttribute="trailing" secondItem="lvw-P6-arN" secondAttribute="trailing" constant="20" id="sQx-L7-uHK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wpC-dw-v18"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yre-uK-4Zg"/>
+                    <connections>
+                        <outlet property="bmiLabel" destination="7eU-v4-2Dn" id="wOj-iP-rNP"/>
+                        <outlet property="descriptionLabel" destination="pAL-YR-TNd" id="xPV-in-i8x"/>
+                        <outlet property="heightTextField" destination="Zbm-vN-K8k" id="KzF-Vc-JYq"/>
+                        <outlet property="weightTextField" destination="u5B-KV-INX" id="KDI-wc-51d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOE-ZI-Sta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542.0289855072465" y="2988.6160714285711"/>
         </scene>
         <!--Add New Weight Table View Controller-->
         <scene sceneID="3zu-ZX-toF">
@@ -1179,13 +1357,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYz-xB-RLZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="rKW-0K-hgS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="2259"/>
+            <point key="canvasLocation" x="1923" y="2259"/>
         </scene>
-        <!--Item-->
+        <!--Вес-->
         <scene sceneID="TPj-Jp-Bh3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DpX-Pn-wl3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cXr-Gb-nv1"/>
+                    <tabBarItem key="tabBarItem" title="Вес" image="weight" id="cXr-Gb-nv1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uhD-LU-ZMt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1211,6 +1389,7 @@
         <image name="MinusWaterGlass" width="884" height="1024"/>
         <image name="Settings" width="33.5" height="33.5"/>
         <image name="WaterBackground" width="375" height="667"/>
+        <image name="calculator" width="33.5" height="33.5"/>
         <image name="calendar" width="512" height="512"/>
         <image name="eat" width="33.5" height="33.5"/>
         <image name="glassIcon" width="33.5" height="33.5"/>
@@ -1218,5 +1397,6 @@
         <image name="heart" width="33.5" height="33.5"/>
         <image name="heart-2211180_1920" width="1920" height="1080"/>
         <image name="statistics" width="33.5" height="33.5"/>
+        <image name="weight" width="33.5" height="33.5"/>
     </resources>
 </document>

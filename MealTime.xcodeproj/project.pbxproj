@@ -13,6 +13,10 @@
 		E91AD7FC246E695A00BC2E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91AD7FB246E695A00BC2E60 /* Assets.xcassets */; };
 		E91AD7FF246E695A00BC2E60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91AD7FD246E695A00BC2E60 /* LaunchScreen.storyboard */; };
 		E94CE818247ED47400F8AF2D /* CardioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94CE817247ED47400F8AF2D /* CardioCell.swift */; };
+		E94D5F72248F59EB00D4A183 /* WeightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D5F71248F59EB00D4A183 /* WeightModel.swift */; };
+		E94D5F74248F59FE00D4A183 /* WeightStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D5F73248F59FE00D4A183 /* WeightStorageManager.swift */; };
+		E94D5F79248FB2EC00D4A183 /* WeightChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D5F78248FB2EC00D4A183 /* WeightChartsViewController.swift */; };
+		E94D5F7B248FD16D00D4A183 /* CalculateBMIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94D5F7A248FD16D00D4A183 /* CalculateBMIViewController.swift */; };
 		E94F1B892477ACAF00E11C40 /* BreakfastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B752477ACAF00E11C40 /* BreakfastModel.swift */; };
 		E94F1B8A2477ACAF00E11C40 /* SupperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B762477ACAF00E11C40 /* SupperModel.swift */; };
 		E94F1B8B2477ACAF00E11C40 /* DinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F1B772477ACAF00E11C40 /* DinnerModel.swift */; };
@@ -54,6 +58,10 @@
 		E91AD7FE246E695A00BC2E60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E91AD800246E695A00BC2E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E94CE817247ED47400F8AF2D /* CardioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioCell.swift; sourceTree = "<group>"; };
+		E94D5F71248F59EB00D4A183 /* WeightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightModel.swift; sourceTree = "<group>"; };
+		E94D5F73248F59FE00D4A183 /* WeightStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightStorageManager.swift; sourceTree = "<group>"; };
+		E94D5F78248FB2EC00D4A183 /* WeightChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartsViewController.swift; sourceTree = "<group>"; };
+		E94D5F7A248FD16D00D4A183 /* CalculateBMIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateBMIViewController.swift; sourceTree = "<group>"; };
 		E94F1B752477ACAF00E11C40 /* BreakfastModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastModel.swift; sourceTree = "<group>"; };
 		E94F1B762477ACAF00E11C40 /* SupperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupperModel.swift; sourceTree = "<group>"; };
 		E94F1B772477ACAF00E11C40 /* DinnerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DinnerModel.swift; sourceTree = "<group>"; };
@@ -146,6 +154,34 @@
 			path = MealTime;
 			sourceTree = "<group>";
 		};
+		E94D5F75248F5A0500D4A183 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E94D5F71248F59EB00D4A183 /* WeightModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E94D5F76248F5A1700D4A183 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E94D5F73248F59FE00D4A183 /* WeightStorageManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E94D5F77248F5A3200D4A183 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E953A043248E9F4300FE269C /* WeightViewController.swift */,
+				E953A066248EA2DA00FE269C /* AddNewWeightTableViewController.swift */,
+				E953A068248EA30800FE269C /* WeightCell.swift */,
+				E94D5F78248FB2EC00D4A183 /* WeightChartsViewController.swift */,
+				E94D5F7A248FD16D00D4A183 /* CalculateBMIViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		E94F1B732477ACAF00E11C40 /* MealTImeModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,9 +256,9 @@
 		E953A045248E9F4A00FE269C /* WeightModule */ = {
 			isa = PBXGroup;
 			children = (
-				E953A043248E9F4300FE269C /* WeightViewController.swift */,
-				E953A066248EA2DA00FE269C /* AddNewWeightTableViewController.swift */,
-				E953A068248EA30800FE269C /* WeightCell.swift */,
+				E94D5F75248F5A0500D4A183 /* Model */,
+				E94D5F77248F5A3200D4A183 /* Controllers */,
+				E94D5F76248F5A1700D4A183 /* Helper */,
 			);
 			path = WeightModule;
 			sourceTree = "<group>";
@@ -230,9 +266,9 @@
 		E99A7C20247EC98C003ADE3D /* CardionModule */ = {
 			isa = PBXGroup;
 			children = (
+				E9E762EC247FC53E00314744 /* Helper */,
 				E99A7C28247ED043003ADE3D /* Model */,
 				E99A7C25247ECFD2003ADE3D /* Controllers */,
-				E9E762EC247FC53E00314744 /* Helper */,
 				E9E762E9247FB67900314744 /* Extension */,
 			);
 			path = CardionModule;
@@ -389,12 +425,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94D5F7B248FD16D00D4A183 /* CalculateBMIViewController.swift in Sources */,
 				E94F1B912477ACAF00E11C40 /* NewDishViewController+DatePickerViewDelegate.swift in Sources */,
 				E9E762E8247FB67300314744 /* AddNewCardio + DatePickerViewDelegate.swift in Sources */,
 				E94F1B8C2477ACAF00E11C40 /* LunchModel.swift in Sources */,
 				E94F1B8A2477ACAF00E11C40 /* SupperModel.swift in Sources */,
 				E94F1B892477ACAF00E11C40 /* BreakfastModel.swift in Sources */,
 				E99A7C24247ECE68003ADE3D /* AddNewCardioViewController.swift in Sources */,
+				E94D5F72248F59EB00D4A183 /* WeightModel.swift in Sources */,
 				E91AD7F3246E695900BC2E60 /* AppDelegate.swift in Sources */,
 				E94F1B932477ACAF00E11C40 /* DatePickerView.swift in Sources */,
 				E953A044248E9F4300FE269C /* WeightViewController.swift in Sources */,
@@ -407,6 +445,7 @@
 				E94F1B8D2477ACAF00E11C40 /* DishesTableViewCell.swift in Sources */,
 				E953A067248EA2DA00FE269C /* AddNewWeightTableViewController.swift in Sources */,
 				E969A15D2486AE65006978C2 /* LineChartsViewController.swift in Sources */,
+				E94D5F74248F59FE00D4A183 /* WeightStorageManager.swift in Sources */,
 				E950F52C2487F501007A53B7 /* WaterViewController.swift in Sources */,
 				E94F1B962477ACAF00E11C40 /* DinnerStorageManager.swift in Sources */,
 				E94F1B972477ACAF00E11C40 /* BreakfastStorageManager.swift in Sources */,
@@ -417,6 +456,7 @@
 				E94F1B8E2477ACAF00E11C40 /* MainViewController.swift in Sources */,
 				E94F1B942477ACAF00E11C40 /* DatePickerViewDelegate.swift in Sources */,
 				E9E762EB247FC53600314744 /* CardioStorageManager.swift in Sources */,
+				E94D5F79248FB2EC00D4A183 /* WeightChartsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
