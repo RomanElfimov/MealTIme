@@ -46,3 +46,15 @@ In development
   <img src="https://github.com/RomanElfimov/MealTIme/blob/master/MealTimeScreenshots/WeightScreen.png" width="400" height="790">
   <img src="https://github.com/RomanElfimov/MealTIme/blob/master/MealTimeScreenshots/WeightCharts.png" width="400" height="790">
 </div>
+
+
+## Stack:
+
+## Memory: Realm, UserDefaults
+
+## "Charts" library
+
+## Architecture: MVC
+
+## Storyboard, XIB files
+
