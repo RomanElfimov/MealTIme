@@ -50,7 +50,7 @@
 		039A3534A8DBACCB773CA8D8 /* Pods-MealTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTime.debug.xcconfig"; path = "Target Support Files/Pods-MealTime/Pods-MealTime.debug.xcconfig"; sourceTree = "<group>"; };
 		B7735FB161C9B233898C0067 /* Pods-MealTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTime.release.xcconfig"; path = "Target Support Files/Pods-MealTime/Pods-MealTime.release.xcconfig"; sourceTree = "<group>"; };
 		DB395E6114624620CD38A294 /* Pods_MealTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E91AD7EF246E695900BC2E60 /* MealTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91AD7EF246E695900BC2E60 /* Health Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91AD7F2246E695900BC2E60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E91AD7F4246E695900BC2E60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E91AD7F9246E695900BC2E60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		E91AD7F0246E695900BC2E60 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E91AD7EF246E695900BC2E60 /* MealTime.app */,
+				E91AD7EF246E695900BC2E60 /* Health Tracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,7 +328,7 @@
 			);
 			name = MealTime;
 			productName = MealTime;
-			productReference = E91AD7EF246E695900BC2E60 /* MealTime.app */;
+			productReference = E91AD7EF246E695900BC2E60 /* Health Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -610,7 +610,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.REDev.MealTime;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Health Tracker";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -631,7 +631,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.REDev.MealTime;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Health Tracker";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

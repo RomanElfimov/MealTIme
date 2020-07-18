@@ -9,7 +9,7 @@
 import UIKit
 
 class CalculateBMIViewController: UIViewController {
-
+    
     //MARK: - Outlets
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
@@ -33,9 +33,9 @@ class CalculateBMIViewController: UIViewController {
         
         
         let bmiResult = weightDouble / pow((heightDouble/100), 2)
-
+        
         bmiLabel.text = "ИМТ: \(Int(bmiResult))"
-
+        
         
         if bmiResult <= 16 {
             descriptionLabel.text = "Дефицит массы тела"
@@ -48,7 +48,7 @@ class CalculateBMIViewController: UIViewController {
             descriptionLabel.text = "Нормальный вес"
             descriptionLabel.textColor = .label
         } else if bmiResult > 25 && bmiResult <= 30 {
-             descriptionLabel.text = "Избыточная масса тела"
+            descriptionLabel.text = "Избыточная масса тела"
             descriptionLabel.textColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         } else if bmiResult > 30 && bmiResult <= 35 {
             descriptionLabel.text = "Ожирение первой степени"

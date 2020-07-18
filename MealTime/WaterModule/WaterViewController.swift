@@ -29,7 +29,7 @@ class WaterViewController: UIViewController {
     
 
     //MARK: - Actions
-    @IBAction func unwind(_ seg: UIStoryboardSegue) {
+    @IBAction func unwindWater(_ seg: UIStoryboardSegue) {
         guard let settingsVC = seg.source as? SettingsTableViewController else {
             print("Failed to settingsVC")
             return

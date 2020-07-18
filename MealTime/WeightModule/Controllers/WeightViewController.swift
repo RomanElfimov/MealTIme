@@ -22,7 +22,7 @@ class WeightViewController: UIViewController {
         super.viewDidLoad()
 
         weightArray = weightRealm.objects(WeightModel.self)
-        weightArray = weightArray.sorted(byKeyPath: "date", ascending: false)
+        weightArray = weightArray.sorted(byKeyPath: "myWeight", ascending: false)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,21 +48,21 @@ class WeightViewController: UIViewController {
         
         let date = newWeightVC.getDate()
         let weight = newWeightVC.getWeight()
-   
+        
         let newWeight = WeightModel(date: date, weight: weight)
         
         if newWeightVC.currentWeight != nil {
             try! weightRealm.write {
                 newWeightVC.currentWeight.date = newWeight.date
                 newWeightVC.currentWeight.myWeight = newWeight.myWeight
-                weightArray = weightArray.sorted(byKeyPath: "date", ascending: false)
+                weightArray = weightArray.sorted(byKeyPath: "myWeight", ascending: false)
             }
         } else {
             WeightStorageManager.saveObject(newWeight)
-            weightArray = weightArray.sorted(byKeyPath: "date", ascending: false)
+            weightArray = weightArray.sorted(byKeyPath: "myWeight", ascending: false)
         }
         
-        weightArray = weightArray.sorted(byKeyPath: "date", ascending: false)
+        weightArray = weightArray.sorted(byKeyPath: "myWeight", ascending: false)
         tableView.reloadData()
     }
 }
@@ -77,7 +77,7 @@ extension WeightViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WeightCell
-    
+        
         let weight = weightArray[indexPath.row]
         
         cell.initCell(with: weight)       

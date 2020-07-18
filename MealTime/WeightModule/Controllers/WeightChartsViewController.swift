@@ -11,7 +11,7 @@ import RealmSwift
 import Charts
 
 class WeightChartsViewController: UIViewController {
-
+    
     //MARK: - Property
     var weightArray: Results<WeightModel>!
     
@@ -21,7 +21,7 @@ class WeightChartsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         weightArray = weightRealm.objects(WeightModel.self)
         weightArray = weightArray.sorted(byKeyPath: "date", ascending: true)
         

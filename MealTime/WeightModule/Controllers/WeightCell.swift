@@ -17,7 +17,7 @@ class WeightCell: UITableViewCell {
     //MARK: - Method
     func initCell(with weight: WeightModel) {
         dateLabel.text = weight.date
-        weightLabel.text = weight.myWeight
+        weightLabel.text = weight.myWeight + " кг"
     }
     
 }
